@@ -14,6 +14,7 @@ if not firebase_admin._apps:
         'storageBucket': '<YOUR_FIREBASE_STORAGE_BUCKET>'
     })
 
+
 db = firestore.client()
 
 firebaseConfig = dict(apiKey="<YOUR_API_KEY>", authDomain="class-recorder0729.firebaseapp.com",
