@@ -1,1 +1,12 @@
-streamlit
+streamlit==1.38.0            # 앱 UI
+firebase-admin==6.5.0        # Firestore, Storage 연동
+pyrebase4==4.7.1             # Firebase Auth, Storage 업로드
+pandas==2.2.2                # CSV/데이터 처리
+openpyxl==3.1.5              # Excel 파일 처리
+requests==2.31.0             # HTTP 요청
+python-dotenv==1.0.1         # 환경변수 관리
+protobuf==4.25.3             # firebase-admin 종속성
+google-cloud-storage==2.17.0 # Pyrebase Storage 연동
+setuptools>=65.5.0           # pkg_resources 오류 방지
+wheel                        # pkg_resources 종속성 보완
+watchdog==4.0.2              # Streamlit 핫리로드 안정성 개선
