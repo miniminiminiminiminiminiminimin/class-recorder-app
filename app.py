@@ -16,13 +16,14 @@ db = firestore.client()
 
 firebaseConfig = {
     "apiKey": "<YOUR_API_KEY>",
-    "authDomain": "<YOUR_AUTH_DOMAIN>",
-    "projectId": "<YOUR_PROJECT_ID>",
-    "storageBucket": "<YOUR_STORAGE_BUCKET>",
+    "authDomain": "class-recorder0729.firebaseapp.com",
+    "databaseURL": "https://class-recorder0729-default-rtdb.firebaseio.com/",
+    "projectId": "class-recorder0729",
+    "storageBucket": "class-recorder0729.appspot.com",
     "messagingSenderId": "<YOUR_SENDER_ID>",
-    "appId": "<YOUR_APP_ID>",
-    "measurementId": "<YOUR_MEASUREMENT_ID>"
+    "appId": "<YOUR_APP_ID>"
 }
+
 
 pb = pyrebase.initialize_app(firebaseConfig)
 auth_pb = pb.auth()
