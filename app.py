@@ -1,12 +1,14 @@
+import json
+import os
+
 import streamlit as st
 import pandas as pd
 import firebase_admin
 from firebase_admin import credentials, firestore, storage
-import pyrebase
-from datetime import date
 
 # Firebase 초기화
-cred = credentials.Certificate("firebase_service_account.json")
+FIREBASE_KEY = json.loads(os.environ["FIREBASE_KEY"])
+cred = credentials.Certificate(FIREBASE_KEY)
 if not firebase_admin._apps:
     firebase_admin.initialize_app(cred, {
         'storageBucket': '<YOUR_FIREBASE_STORAGE_BUCKET>'
@@ -14,15 +16,10 @@ if not firebase_admin._apps:
 
 db = firestore.client()
 
-firebaseConfig = {
-    "apiKey": "<YOUR_API_KEY>",
-    "authDomain": "class-recorder0729.firebaseapp.com",
-    "databaseURL": "https://class-recorder0729-default-rtdb.firebaseio.com/",
-    "projectId": "class-recorder0729",
-    "storageBucket": "class-recorder0729.appspot.com",
-    "messagingSenderId": "<YOUR_SENDER_ID>",
-    "appId": "<YOUR_APP_ID>"
-}
+firebaseConfig = dict(apiKey="<YOUR_API_KEY>", authDomain="class-recorder0729.firebaseapp.com",
+                      databaseURL="https://class-recorder0729-default-rtdb.firebaseio.com/",
+                      projectId="class-recorder0729", storageBucket="class-recorder0729.appspot.com",
+                      messagingSenderId="<YOUR_SENDER_ID>", appId="<YOUR_APP_ID>")
 
 
 pb = pyrebase.initialize_app(firebaseConfig)
